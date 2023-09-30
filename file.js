@@ -22,7 +22,7 @@ function playOnClick() {
       playerSelection !== "S"
     ) {
       playerSelection = prompt(
-        "ERROR! PLZ only Enter (R)-Rock (P)-Paper (S)-Scissors"
+        "Dumb guy! Only Enter: (R)-Rock (P)-Paper (S)-Scissors"
       ).toUpperCase();
     }
     return playerSelection;
@@ -100,7 +100,7 @@ function playOnClick() {
         computerScore +
         "\n" +
         "\n" +
-        "The computer won. Get better!"
+        "LOSER :P The computer won. Get better!"
       );
     } else {
       return (
@@ -115,9 +115,11 @@ function playOnClick() {
       );
     }
   }
-  let gamesToPlay;
+  let gamesToPlay = parseInt(prompt("Enter how many rounds to play: "));
   do {
-    gamesToPlay = parseInt(prompt("Enter how many rounds to play: "));
+    gamesToPlay = parseInt(
+      prompt("Idiot! Enter a valid number of rounds to play: ")
+    );
   } while (!Number(gamesToPlay));
 
   alert(game(gamesToPlay));
