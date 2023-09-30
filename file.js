@@ -19,11 +19,7 @@ function playOnClick() {
     while (
       playerSelection !== "R" &&
       playerSelection !== "P" &&
-      playerSelection !== "S" &&
-      playerSelection !== "ROCK" &&
-      playerSelection !== "PAPER" &&
-      playerSelection !== "SCISSORS" &&
-      playerSelection !== "SCISSORS"
+      playerSelection !== "S"
     ) {
       playerSelection = prompt(
         "Dumb guy! Only Enter: (R)-Rock (P)-Paper (S)-Scissors"
