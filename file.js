@@ -14,7 +14,7 @@ function playOnClick() {
 
   function getPlayerChoice() {
     let playerSelection = prompt(
-      "Enter Rock(R), Paper(P), Scissors(S): "
+      "Choose: (R)-Rock (P)-Paper (S)-Scissors "
     ).toUpperCase();
     while (
       playerSelection !== "R" &&
