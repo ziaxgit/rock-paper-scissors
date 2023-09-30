@@ -13,7 +13,9 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-  return prompt("Enter Rock(R), Paper(P), Scissors(S): ");
+  let playerSelection = prompt("Enter Rock(R), Paper(P), Scissors(S): ").toLowerCase();
+  if (!playerSelection.includes("R" || "P" || "S")){
+      playerSelection = prompt("Bro Enter (R):Rock, (P):Paper, (S):Scissors: ").toLowerCase();
 }
 
 function playRound(playerSelection, computerSelection) {
