@@ -115,6 +115,10 @@ function playOnClick() {
       );
     }
   }
-  let gamesToPlay = prompt("Enter how many rounds to play: ");
+  let gamesToPlay;
+  do {
+    gamesToPlay = parseInt(prompt("Enter how many rounds to play: "));
+  } while (!Number(gamesToPlay));
+
   alert(game(gamesToPlay));
 }
