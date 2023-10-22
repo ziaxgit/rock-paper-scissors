@@ -1,0 +1,50 @@
+* {
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+  padding: 20px;
+}
+.para-github img {
+  width: 25px;
+  height: 25px;
+  margin-top: -6px;
+}
+.para-github {
+  margin-top: -15px;
+  display: flex;
+  gap: 5px;
+}
+
+input {
+  width: 10em;
+  padding: 10px;
+  font-size: large;
+}
+button {
+  width: 5em;
+  padding: 10px;
+}
+.input-button {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.container-one {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-style {
+  border: 2px solid black;
+  width: 400px;
+  height: 300px;
+  margin-bottom: 5px;
+}

@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors</title>
     <script src="file.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <style>
-    body {
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      margin-top: 40vh;
-    }
-    button {
-      background-color: rgb(16, 113, 198);
-      color: white;
-      font-size: larger;
-      font-weight: 700;
-      padding: 20px;
-      border-radius: 10px;
-      border-width: 0;
-    }
-
-    button:hover {
-      cursor: pointer;
-    }
-  </style>
   <body>
-    <button onclick="playOnClick()">CLICK TO PLAY</button>
+    <div class="container-one">
+      <h2>ROCK, PAPER, SCISSORS TOURNAMENT</h2>
+      <div class="para-github">
+        <p>Hosted by <a href="https://github.com/ziaxgit">Ziaur Rahman</a></p>
+        <img src="resources/github-logo.png" alt="github logo" />
+      </div>
+      <div class="input-button">
+        <input type="text" placeholder="Enter your name..." />
+        <button onclick="playOnClick()">START</button>
+      </div>
+    </div>
+    <p>First to 5 points wins!</p>
+    <div class="container-gameplay">
+      <div class="container-style container-user">
+        <p>User</p>
+        <p id="user-score">Score:</p>
+      </div>
+      <div class="versus"></div>
+      <div class="container-style container-computer">
+        <p>Computer</p>
+        <p id="computer-score">Score:</p>
+      </div>
+    </div>
   </body>
 </html>
