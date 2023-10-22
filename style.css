@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap");
 * {
   margin-top: 0;
   box-sizing: border-box;
+  color: white;
+  font-family: "Walter Turncoat", cursive;
 }
 
 body {
-  background-color: beige;
+  background-image: url(resources/background.jpg);
   padding: 20px;
 }
 .para-github img {
@@ -42,9 +45,36 @@ button {
   flex-direction: column;
 }
 
+.container-gameplay {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
 .container-style {
-  border: 2px solid black;
-  width: 500px;
-  height: 300px;
+  border: 2px solid rgba(180, 174, 174, 0.697);
+  width: 200px;
+  height: 200px;
   margin-bottom: 5px;
+  background-color: rgba(134, 134, 134, 0.682);
+}
+
+.win-text {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.versus {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.user-selection-images {
+  height: 6em;
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  margin-top: 15px;
 }
