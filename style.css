@@ -8,9 +8,21 @@
 
 body {
   background-image: url(resources/background.jpg);
+  background-size: 30px;
   padding: 20px;
 }
-.para-github img {
+h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+input {
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  background: rgba(139, 135, 135, 0.201);
+  height: 2rem;
+}
+/* .para-github img {
   width: 25px;
   height: 25px;
   margin-top: -6px;
@@ -19,16 +31,17 @@ body {
   margin-top: -15px;
   display: flex;
   gap: 5px;
-}
+} */
 
 input {
   width: 10em;
   padding: 10px;
   font-size: large;
 }
-button {
-  width: 5em;
-  padding: 10px;
+.container-top button {
+  padding: 5px;
+  color: black;
+  cursor: pointer;
 }
 .input-button {
   display: flex;
@@ -37,7 +50,7 @@ button {
   align-items: center;
 }
 
-.container-one {
+.container-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,16 +66,29 @@ button {
 
 .container-style {
   border: 2px solid rgba(180, 174, 174, 0.697);
-  width: 200px;
-  height: 200px;
+  width: 12rem;
+  height: 13rem;
   margin-bottom: 5px;
-  background-color: rgba(134, 134, 134, 0.682);
+  /*   background-color: rgba(134, 134, 134, 0.682);
+ */
+  text-align: center;
 }
 
-.win-text {
+.para-score-style {
+  margin: 0;
+}
+
+.container-style img {
   margin-top: 10px;
+  max-width: 12rem;
+  max-height: 10rem;
+}
+
+.p-text {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
+  font-weight: 600;
 }
 .versus {
   font-size: 2em;
@@ -72,9 +98,27 @@ button {
 }
 
 .user-selection-images {
-  height: 6em;
-  display: flex;
-  gap: 5%;
-  justify-content: center;
   margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.user-selection-images img {
+  width: 10rem;
+  height: 8rem;
+  flex: 1;
+}
+
+.user-selection-images button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.gameplay-screen {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }

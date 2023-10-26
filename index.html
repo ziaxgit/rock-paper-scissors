@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors</title>
-    <!--     <script src="file.js"></script>
- -->
+    <script src="file.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,40 +13,52 @@
     />
   </head>
   <body>
-    <div class="container-one">
+    <section class="container-top">
       <h1>ROCK, PAPER, SCISSORS</h1>
-      <div class="para-github">
-        <p class="win-text">FIRST TO 5 POINTS WINS!</p>
-
-        <!--         <p>
+      <!-- <div class="para-github">
+                <p>
           Tournament hosted by
           <a href="https://github.com/ziaxgit">Ziaur Rahman</a>
         </p>
-        <img src="resources/github-logo.png" alt="github logo" /> -->
-      </div>
+        <img src="resources/github-logo.png" alt="github logo" />
+      </div> -->
       <div class="input-button">
-        <input type="text" placeholder="Enter your name..." />
-        <button onclick="playOnClick()">START</button>
+        <input
+          type="text"
+          placeholder="Enter your name..."
+          value=""
+          autofocus
+        />
+        <button onclick="startGameFunc()">LET'S GO!</button>
       </div>
-    </div>
+    </section>
+      <div><p class="class-welcome p-text">FIRST TO 5 POINTS WINS!</p></div>
+      <section class="container-gameplay">
+        <div class="container-style container-user">
+          <p class="para-score-style">User</p>
+          <p class="para-score-style" id="user-score">SCORE: 7</p>
+          <img src="" />
+        </div>
 
-    <div class="container-gameplay">
-      <div class="container-style container-user">
-        <p>User</p>
-        <p id="user-score">Score:</p>
-      </div>
+        <div class="versus">VS</div>
+        <div class="container-style container-computer">
+          <p class="para-score-style">COMPUTER</p>
+          <p class="para-score-style" id="computer-score">SCORE: 7</p>
+          <img style="transform: scaleX(-1)" src="" />
+        </div>
+      </section>
 
-      <div class="versus">VS</div>
-      <div class="container-style container-computer">
-        <p>Computer</p>
-        <p id="computer-score">Score:</p>
-      </div>
-    </div>
-
-    <div class="user-selection-images">
-      <img src="resources/rock1.png" alt="" />
-      <img src="resources/paper1.png" alt="" />
-      <img src="resources/scissors1.png" alt="" />
-    </div>
+      <p class="p-text">SELECT YOUR MOVE</p>
+      <section class="user-selection-images">
+        <button id="R" onclick="getPlayerChoice(this.id)">
+          <img src="resources/rock1.png" alt="Rock" />
+        </button>
+        <button id="P" onclick="getPlayerChoice(this.id)">
+          <img src="resources/paper1.png" alt="Paper" />
+        </button>
+        <button id="S" onclick="getPlayerChoice(this.id)">
+          <img src="resources/scissors1.png" alt="Scissors" />
+        </button>
+      </section>
   </body>
 </html>

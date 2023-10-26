@@ -1,6 +1,44 @@
+function startGameFunc() {
+  let value = document.querySelector("input").value.toUpperCase();
+  console.log(value);
+  let userName = document.querySelector(
+    ".container-gameplay .container-user p"
+  );
+  userName.innerHTML = value;
+  let welcomeMsg = document.querySelector("p");
+  welcomeMsg.innerHTML = `Welcome ${value},  first to 5 points wins!`;
+  console.log(welcomeMsg);
+}
+function getPlayerChoice(idOfMove) {
+  // whichever image player clicks, store it in a variable
+  let userImgTag = document.querySelector(
+    ".container-style.container-user img"
+  );
+  if (idOfMove === "R") {
+    userImgTag.src = "resources/rock1.png";
+  } else if (idOfMove === "P") {
+    userImgTag.src = "resources/paper1.png";
+  } else if (idOfMove === "S") {
+    userImgTag.src = "resources/scissors1.png";
+  }
+
+  let arrOfChoice = ["R", "P", "S"];
+  let compChoice = arrOfChoice[Math.floor(Math.random() * 3)];
+
+  let compImgTag = document.querySelector(
+    ".container-style.container-computer img"
+  );
+  if (compChoice === "R") {
+    compImgTag.src = "resources/rock1.png";
+  } else if (compChoice === "P") {
+    compImgTag.src = "resources/paper1.png";
+  } else if (compChoice === "S") {
+    compImgTag.src = "resources/scissors1.png";
+  }
+
+  return playerSelection;
+}
 function playOnClick() {
-  alert("Rock, Paper, Scissors. LET'S GO!");
-  console.log("");
   let obj = {
     R: "Rock",
     P: "Paper",
@@ -10,22 +48,6 @@ function playOnClick() {
   function getComputerChoice() {
     let arrOfChoice = ["R", "P", "S"];
     return arrOfChoice[Math.floor(Math.random() * 3)];
-  }
-
-  function getPlayerChoice() {
-    let playerSelection = prompt(
-      "Choose: (R)-Rock (P)-Paper (S)-Scissors "
-    ).toUpperCase();
-    while (
-      playerSelection !== "R" &&
-      playerSelection !== "P" &&
-      playerSelection !== "S"
-    ) {
-      playerSelection = prompt(
-        "What was that!? \nEnter: (R)-Rock (P)-Paper (S)-Scissors"
-      ).toUpperCase();
-    }
-    return playerSelection;
   }
 
   function playRound(playerSelection, computerSelection) {
@@ -43,6 +65,7 @@ function playOnClick() {
   }
 
   function game(numOfRounds) {
+    // should be 5 rounds
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 1; i <= numOfRounds; i++) {
