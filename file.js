@@ -139,14 +139,14 @@ function playerSelection(playerSelection) {
 
   let gameplayScreen = document.querySelector("#gameplay-screen");
 
-  if (userScore === 5) {
+  if (userScore === 1) {
     let winnerScreen = document.querySelector(".winner");
     gameplayScreen.style.display = "none";
     winnerScreen.style.display = "block";
     document.querySelector(".footer").style.display = "block";
   }
 
-  if (compScore === 10) {
+  if (compScore === 1) {
     let winnerScreen = document.querySelector(".loser");
     gameplayScreen.style.display = "none";
     winnerScreen.style.display = "block";
