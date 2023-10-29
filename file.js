@@ -147,7 +147,30 @@ function playerSelection(playerSelection) {
   return playerSelection;
 }
 
+const winningMessages = [
+  "Rock and roll, you've crushed it!",
+  "Paper covers rock, but you've covered them all!",
+  "Scissor me timbers, you've sliced through the competition!",
+  "Rock solid performance, my friend!",
+  "You proved your brain is smarter than the computers!",
+];
+
+// Array of losing messages for Rock, Paper, Scissors
+const losingMessages = [
+  "In this game, you either rock or you paper...or you lose.",
+  "Paper: 1, Rock: 0, You: Still awesome!",
+  "Scissors are too sharp for you today. Better luck next time!",
+  "Looks like your game plan was a little rocky!",
+  "Rock and roll? More like rock and lose!",
+];
+
+const randomWinningMessage =
+  winningMessages[Math.floor(Math.random() * winningMessages.length)];
+const randomLosingMessage =
+  losingMessages[Math.floor(Math.random() * losingMessages.length)];
 function winnerScreen() {
+  let winningMsg = document.querySelector(".winner h1");
+  winningMsg.innerHTML = randomLosingMessage;
   let gameplayScreen = document.querySelector("#gameplay-screen");
   gameplayScreen.style.display = "none";
   let winnerScreen = document.querySelector(".winner");
@@ -159,6 +182,8 @@ function winnerScreen() {
 }
 
 function loserScreen() {
+  let losingMsg = document.querySelector(".loser h1");
+  losingMsg.innerHTML = randomLosingMessage;
   let gameplayScreen = document.querySelector("#gameplay-screen");
   gameplayScreen.style.display = "none";
   let loserScreen = document.querySelector(".loser");
