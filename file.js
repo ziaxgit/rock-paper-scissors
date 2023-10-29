@@ -18,8 +18,7 @@ function startGameFunc() {
     welcomeMsg.innerHTML = `Welcome Stranger,  first to 5 points wins!`;
     userName.innerHTML = "STRANGER";
   }
-
-  document.querySelector(".footer").style.display = "none";
+  document.querySelector(".footer").style.visibility = "hidden";
   return;
 }
 let userScore = 0;
@@ -137,23 +136,41 @@ function playerSelection(playerSelection) {
   );
   compScoreTag.innerHTML = "Score: " + compScore;
 
-  let gameplayScreen = document.querySelector("#gameplay-screen");
-
   if (userScore === 1) {
-    let winnerScreen = document.querySelector(".winner");
-    gameplayScreen.style.display = "none";
-    winnerScreen.style.display = "block";
-    document.querySelector(".footer").style.display = "block";
+    winnerScreen();
   }
 
   if (compScore === 1) {
-    let winnerScreen = document.querySelector(".loser");
-    gameplayScreen.style.display = "none";
-    winnerScreen.style.display = "block";
-    document.querySelector(".footer").style.display = "block";
+    loserScreen();
   }
   return playerSelection;
 }
+
+function winnerScreen() {
+  let gameplayScreen = document.querySelector("#gameplay-screen");
+  let winnerScreen = document.querySelector(".winner");
+  gameplayScreen.style.display = "none";
+  winnerScreen.style.display = "block";
+  document.querySelector(".footer").style.visibility = "visible";
+  let audio = new Audio("resources/happy-happy-cat.mp3");
+  audio.play();
+  document.querySelector(".play-again").style.display = "block";
+
+}
+
+function loserScreen() {
+  let gameplayScreen = document.querySelector("#gameplay-screen");
+
+  let winnerScreen = document.querySelector(".loser");
+  gameplayScreen.style.display = "none";
+  winnerScreen.style.display = "block";
+  document.querySelector(".footer").style.visibility = "visible";
+  let audio = new Audio("resources/banana-cat-crying.mp3");
+  document.querySelector(".play-again").style.display = "block";
+
+  audio.play();
+}
+
 /* function playOnClick() {
   let obj = {
     R: "Rock",
