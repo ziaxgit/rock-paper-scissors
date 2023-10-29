@@ -202,7 +202,8 @@ button:hover {
 .footer {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
-a{
+a {
   text-decoration: none;
 }
