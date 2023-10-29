@@ -28,6 +28,7 @@ h1 {
   margin-top: 10vh;
   font-size: 2em;
   margin-bottom: 5px;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 input {
@@ -39,17 +40,19 @@ input {
   padding: 10px;
   font-size: large;
   margin-top: 10vh;
+  animation: pulse 1.5s infinite;
 }
-/* .para-github img {
+.para-github img {
   width: 25px;
   height: 25px;
   margin-top: -6px;
+  background: white;
 }
 .para-github {
   margin-top: -15px;
   display: flex;
   gap: 5px;
-} */
+}
 
 .container-top button {
   padding: 5px;
@@ -61,8 +64,8 @@ input {
 
 button:hover {
   background-color: yellow;
-  animation: pulse 0.5s infinite;
-  font: bold;
+  animation: pulse 0.5s alternate;
+  font-weight: bold;
 }
 .input-button {
   display: flex;
@@ -86,6 +89,8 @@ button:hover {
   align-items: center;
   gap: 5px;
   flex-wrap: nowrap;
+  background: none;
+  transition: background 1s;
 }
 
 .container-style {
@@ -93,7 +98,7 @@ button:hover {
   /*   background-color: rgba(134, 134, 134, 0.682);
  */
   text-align: center;
-  height: 205px;
+  height: 210px;
   padding: 5px 10px;
 }
 
@@ -112,12 +117,14 @@ button:hover {
   padding: 5px 0;
   text-align: center;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .msg-text {
   font-size: 1.5em;
   margin-bottom: 10px;
   color: yellow;
+  margin-top: -5vh;
+  height: 10vh;
 }
 .versus {
   color: red;
@@ -129,11 +136,12 @@ button:hover {
 }
 
 .user-selection-images {
-  margin-top: -15px;
+  margin-top: 0;
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: nowrap;
+  border-radius: 5px;
 }
 
 .user-selection-images img {
@@ -146,6 +154,8 @@ button:hover {
   background: none;
   padding: 10px;
   animation: pulse 1s infinite;
+  box-shadow: inset -5px -5px 30px 5px #e1d45bb5, inset 5px 5px 30px 5px #ffffff;
+  border-radius: 40%;
 }
 @keyframes pulse {
   0% {
@@ -160,7 +170,9 @@ button:hover {
 }
 
 .user-selection-images button:hover {
-  background: rgba(255, 0, 0, 0.396);
+  /*   background: rgba(255, 0, 0, 0.396);
+ */
+  background: rgba(255, 255, 0, 0.707);
   border-radius: 30%;
   cursor: pointer;
 }
@@ -180,10 +192,17 @@ button:hover {
 }
 
 #gameplay-screen {
-  visibility: hidden;
+  display: none;
 }
 
 .winner,
 .loser {
   visibility: hidden;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+a{
+  text-decoration: none;
 }

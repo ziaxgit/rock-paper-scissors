@@ -1,15 +1,13 @@
 function startGameFunc() {
   let gameplayScreen = document.querySelector("#gameplay-screen");
-  console.log(gameplayScreen);
   gameplayScreen.style.marginTop = "10vh";
-  gameplayScreen.style.visibility = "visible";
+  gameplayScreen.style.display = "block";
 
   let topContainer = document.querySelector(".container-top");
   topContainer.style.display = "none";
 
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
-  console.log(value);
   let userName = document.querySelector(
     ".container-gameplay .container-user p"
   );
@@ -24,6 +22,30 @@ function startGameFunc() {
 }
 let userScore = 0;
 let compScore = 0;
+
+function winAnimation() {
+  document.querySelector(".container-user").style.background = "green";
+  setTimeout(function () {
+    document.querySelector(".container-user").style.background = "transparent";
+  }, 700);
+}
+
+function loseAnimation() {
+  document.querySelector(".container-computer").style.background = "green";
+  setTimeout(function () {
+    document.querySelector(".container-computer").style.background =
+      "transparent";
+  }, 700);
+}
+
+function tieAnimation() {
+  document.querySelector(".container-gameplay").style.background = "white";
+  setTimeout(function () {
+    document.querySelector(".container-gameplay").style.background =
+      "transparent";
+  }, 700);
+}
+
 function playerSelection(playerSelection) {
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
@@ -55,24 +77,30 @@ function playerSelection(playerSelection) {
   let userScoreTag = document.querySelector(
     ".container-style.container-user #user-score"
   );
+
+  // this block is for messages of who won the round
   if (playerSelection === compChoice) {
     welcomeMsg.innerHTML = "It's a tie!";
+    tieAnimation();
   } else if (compChoice === "S" && playerSelection === "R") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
+    winAnimation();
   } else if (compChoice === "R" && playerSelection === "P") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
+    winAnimation();
   } else if (compChoice === "P" && playerSelection === "S") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
+    winAnimation();
   } else {
     welcomeMsg.innerHTML = `Point goes to computer!`;
     compScore += 1;
+    loseAnimation();
   }
 
   userScoreTag.innerHTML = "Score: " + userScore;
-  console.log(userScoreTag);
   let compScoreTag = document.querySelector(
     ".container-style.container-computer #computer-score"
   );
@@ -90,7 +118,6 @@ function playerSelection(playerSelection) {
     !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
 
   if (!isTouch) {
-    
   }
   return playerSelection;
 }
