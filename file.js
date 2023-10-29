@@ -19,6 +19,7 @@ function startGameFunc() {
     userName.innerHTML = "STRANGER";
   }
   document.querySelector(".footer").style.visibility = "hidden";
+  loserScreen();
   return;
 }
 let userScore = 0;
@@ -191,6 +192,11 @@ function loserScreen() {
   let audio = new Audio("resources/banana-cat-crying.mp3");
   audio.play();
 }
+
+function reloadFunc() {
+  location.reload();
+}
+
 /* function playOnClick() {
   let obj = {
     R: "Rock",
