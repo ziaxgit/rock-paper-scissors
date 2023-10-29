@@ -30,9 +30,18 @@ function winAnimation() {
   setTimeout(function () {
     document.querySelector(".container-user").style.background = "transparent";
   }, 700);
+  document.querySelector(".container-computer").style.background = "red";
+  setTimeout(function () {
+    document.querySelector(".container-computer").style.background =
+      "transparent";
+  }, 700);
 }
 
 function loseAnimation() {
+  document.querySelector(".container-user").style.background = "red";
+  setTimeout(function () {
+    document.querySelector(".container-user").style.background = "transparent";
+  }, 700);
   document.querySelector(".container-computer").style.background = "green";
   setTimeout(function () {
     document.querySelector(".container-computer").style.background =
@@ -110,7 +119,7 @@ function playerSelection(playerSelection) {
 
   let gameplayScreen = document.querySelector("#gameplay-screen");
 
-  if (userScore === 1) {
+  if (userScore === 5) {
     let winnerScreen = document.querySelector(".winner");
     gameplayScreen.style.display = "none";
     winnerScreen.style.display = "block";
