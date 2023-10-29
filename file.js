@@ -19,6 +19,7 @@ function startGameFunc() {
     userName.innerHTML = "STRANGER";
   }
   document.querySelector(".footer").style.visibility = "hidden";
+
   return;
 }
 let userScore = 0;
@@ -136,11 +137,11 @@ function playerSelection(playerSelection) {
   );
   compScoreTag.innerHTML = "Score: " + compScore;
 
-  if (userScore === 1) {
+  if (userScore === 5) {
     winnerScreen();
   }
 
-  if (compScore === 1) {
+  if (compScore === 5) {
     loserScreen();
   }
   return playerSelection;
@@ -148,24 +149,23 @@ function playerSelection(playerSelection) {
 
 function winnerScreen() {
   let gameplayScreen = document.querySelector("#gameplay-screen");
-  let winnerScreen = document.querySelector(".winner");
   gameplayScreen.style.display = "none";
-  winnerScreen.style.display = "block";
+  let winnerScreen = document.querySelector(".winner");
+  winnerScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
   let audio = new Audio("resources/happy-happy-cat.mp3");
   audio.play();
   document.querySelector(".play-again").style.display = "block";
-
 }
 
 function loserScreen() {
   let gameplayScreen = document.querySelector("#gameplay-screen");
-
-  let winnerScreen = document.querySelector(".loser");
   gameplayScreen.style.display = "none";
-  winnerScreen.style.display = "block";
+  let loserScreen = document.querySelector(".loser");
+  loserScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
   let audio = new Audio("resources/banana-cat-crying.mp3");
+  audio.play();
   document.querySelector(".play-again").style.display = "block";
 
   audio.play();
