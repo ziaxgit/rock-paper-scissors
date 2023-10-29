@@ -42,17 +42,6 @@ input {
   margin-top: 10vh;
   animation: pulse 1.5s infinite;
 }
-.para-github img {
-  width: 25px;
-  height: 25px;
-  margin-top: -6px;
-  background: white;
-}
-.para-github {
-  margin-top: -15px;
-  display: flex;
-  gap: 5px;
-}
 
 .container-top button {
   padding: 5px;
@@ -185,25 +174,29 @@ button:hover {
   }
 }
 
-.gameplay-screen {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
 #gameplay-screen {
   display: none;
 }
 
 .winner,
 .loser {
-  visibility: hidden;
+  display: none;
 }
 .footer {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 5vh;
 }
-a {
-  text-decoration: none;
+.para-github img {
+  width: 25px;
+  height: 25px;
+  margin-top: -6px;
+  background: white;
+}
+.para-github {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }

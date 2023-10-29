@@ -18,6 +18,8 @@ function startGameFunc() {
     welcomeMsg.innerHTML = `Welcome Stranger,  first to 5 points wins!`;
     userName.innerHTML = "STRANGER";
   }
+
+  document.querySelector(".footer").style.display = "none";
   return;
 }
 let userScore = 0;
@@ -108,16 +110,18 @@ function playerSelection(playerSelection) {
 
   let gameplayScreen = document.querySelector("#gameplay-screen");
 
-  if (userScore === 5) {
+  if (userScore === 1) {
     let winnerScreen = document.querySelector(".winner");
     gameplayScreen.style.display = "none";
-    winnerScreen.style.visibility = "visible";
+    winnerScreen.style.display = "block";
+    document.querySelector(".footer").style.display = "block";
   }
 
-  var isTouch =
-    !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
-
-  if (!isTouch) {
+  if (compScore === 5) {
+    let winnerScreen = document.querySelector(".loser");
+    gameplayScreen.style.display = "none";
+    winnerScreen.style.display = "block";
+    document.querySelector(".footer").style.display = "block";
   }
   return playerSelection;
 }
