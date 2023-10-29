@@ -39,7 +39,7 @@ input {
   width: 10em;
   padding: 10px;
   font-size: large;
-  margin-top: 10vh;
+  margin-top: 8vh;
   animation: pulse 1.5s infinite;
 }
 
@@ -62,7 +62,7 @@ button:hover {
 .input-button {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
 }
 

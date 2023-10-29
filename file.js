@@ -19,7 +19,6 @@ function startGameFunc() {
     userName.innerHTML = "STRANGER";
   }
   document.querySelector(".footer").style.visibility = "hidden";
-  loserScreen();
   return;
 }
 let userScore = 0;
@@ -142,7 +141,7 @@ function playerSelection(playerSelection) {
   }
 
   if (compScore === 5) {
-    winnerScreen();
+    loserScreen();
   }
   return playerSelection;
 }
