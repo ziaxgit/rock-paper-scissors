@@ -44,12 +44,14 @@ input {
 }
 
 .container-top button {
-  padding: 5px;
+  padding: 8px;
   color: black;
   cursor: pointer;
   margin-top: 10px;
   width: 50%;
   border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
 }
 
 button:hover {
@@ -85,8 +87,6 @@ button:hover {
 
 .container-style {
   width: 10rem;
-  /*   background-color: rgba(134, 134, 134, 0.682);
- */
   text-align: center;
   height: 210px;
   padding: 5px 10px;
@@ -207,11 +207,6 @@ button:hover {
 
 .para-github a:hover {
   color: yellow;
-}
-
-.play-again {
-  display: none;
-  text-align: center;
 }
 
 .play-again button {

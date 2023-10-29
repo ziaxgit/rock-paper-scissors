@@ -19,7 +19,6 @@ function startGameFunc() {
     userName.innerHTML = "STRANGER";
   }
   document.querySelector(".footer").style.visibility = "hidden";
-
   return;
 }
 let userScore = 0;
@@ -142,7 +141,7 @@ function playerSelection(playerSelection) {
   }
 
   if (compScore === 5) {
-    loserScreen();
+    winnerScreen();
   }
   return playerSelection;
 }
@@ -152,7 +151,7 @@ const winningMessages = [
   "Paper covers rock, but you've covered them all!",
   "Scissor me timbers, you've sliced through the competition!",
   "Rock solid performance, my friend!",
-  "You proved your brain is smarter than the computers!",
+  "You proved your brain is smarter than that computer's!",
 ];
 
 // Array of losing messages for Rock, Paper, Scissors
@@ -168,9 +167,10 @@ const randomWinningMessage =
   winningMessages[Math.floor(Math.random() * winningMessages.length)];
 const randomLosingMessage =
   losingMessages[Math.floor(Math.random() * losingMessages.length)];
+
 function winnerScreen() {
   let winningMsg = document.querySelector(".winner h1");
-  winningMsg.innerHTML = randomLosingMessage;
+  winningMsg.innerHTML = randomWinningMessage;
   let gameplayScreen = document.querySelector("#gameplay-screen");
   gameplayScreen.style.display = "none";
   let winnerScreen = document.querySelector(".winner");
@@ -178,7 +178,6 @@ function winnerScreen() {
   document.querySelector(".footer").style.visibility = "visible";
   let audio = new Audio("resources/happy-happy-cat.mp3");
   audio.play();
-  document.querySelector(".play-again").style.display = "block";
 }
 
 function loserScreen() {
@@ -191,11 +190,7 @@ function loserScreen() {
   document.querySelector(".footer").style.visibility = "visible";
   let audio = new Audio("resources/banana-cat-crying.mp3");
   audio.play();
-  document.querySelector(".play-again").style.display = "block";
-
-  audio.play();
 }
-
 /* function playOnClick() {
   let obj = {
     R: "Rock",
