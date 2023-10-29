@@ -8,10 +8,24 @@
 
 body {
   background-image: url(resources/background.jpg);
-  background-size: 30px;
+  background-size: contain;
   padding: 20px;
+  background-position: center center;
+  overflow: hidden;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+on the container's size */
+  background-size: cover;
 }
 h1 {
+  margin-top: 10vh;
   font-size: 2em;
   margin-bottom: 5px;
   text-align: center;
@@ -20,7 +34,11 @@ input {
   color: rgb(255, 255, 255);
   border: 2px solid white;
   background: rgba(139, 135, 135, 0.201);
-  height: 2rem;
+  height: 3rem;
+  width: 10em;
+  padding: 10px;
+  font-size: large;
+  margin-top: 10vh;
 }
 /* .para-github img {
   width: 25px;
@@ -33,15 +51,18 @@ input {
   gap: 5px;
 } */
 
-input {
-  width: 10em;
-  padding: 10px;
-  font-size: large;
-}
 .container-top button {
   padding: 5px;
   color: black;
   cursor: pointer;
+  margin-top: 10px;
+  width: 50%;
+}
+
+button:hover {
+  background-color: yellow;
+  animation: pulse 0.5s infinite;
+  font: bold;
 }
 .input-button {
   display: flex;
@@ -59,19 +80,21 @@ input {
 }
 
 .container-gameplay {
+  margin-top: -5px;
   display: flex;
   justify-content: center;
-  gap: 3%;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
 }
 
 .container-style {
-  border: 2px solid rgba(180, 174, 174, 0.697);
-  width: 12rem;
-  height: 13rem;
-  margin-bottom: 5px;
+  width: 10rem;
   /*   background-color: rgba(134, 134, 134, 0.682);
  */
   text-align: center;
+  height: 205px;
+  padding: 5px 10px;
 }
 
 .para-score-style {
@@ -79,46 +102,88 @@ input {
 }
 
 .container-style img {
-  margin-top: 10px;
-  max-width: 12rem;
-  max-height: 10rem;
+  margin-top: 30px;
+  /*   max-width: 12rem;
+  max-height: 10rem; */
+  width: 100%;
 }
 
 .p-text {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
+  padding: 5px 0;
+  text-align: center;
   font-weight: 600;
+  margin-top: 10px;
+}
+.msg-text {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: yellow;
 }
 .versus {
+  color: red;
   font-size: 2em;
   font-style: italic;
   font-weight: bold;
-  margin: auto 0;
+  margin-right: 5px;
+  padding-top: 50px;
 }
 
 .user-selection-images {
-  margin-top: 15px;
+  margin-top: -15px;
   display: flex;
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .user-selection-images img {
-  width: 10rem;
-  height: 8rem;
-  flex: 1;
+  width: 100%;
 }
 
 .user-selection-images button {
+  width: 8rem;
   border: none;
   background: none;
+  padding: 10px;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.user-selection-images button:hover {
+  background: rgba(255, 0, 0, 0.396);
+  border-radius: 30%;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .user-selection-images button:hover {
+    background: none; /* Or specify the default background for mobile */
+    border-radius: 0; /* Reset the border-radius */
+    cursor: pointer; /* You can keep or reset the cursor style as needed */
+  }
 }
 
 .gameplay-screen {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+#gameplay-screen {
+  visibility: hidden;
+}
+
+.winner,
+.loser {
+  visibility: hidden;
 }

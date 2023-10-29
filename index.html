@@ -24,41 +24,53 @@
       </div> -->
       <div class="input-button">
         <input
+          id="inpu"
           type="text"
           placeholder="Enter your name..."
           value=""
           autofocus
+          onkeydown="if (event.keyCode == 13)
+                        document.getElementById('myBtn').click()"
         />
-        <button onclick="startGameFunc()">LET'S GO!</button>
+        <button id="myBtn" onclick="startGameFunc()">LET'S GO!</button>
+        <!-- <a href="#gameplay-screen">go to gameplay</a> -->
       </div>
     </section>
-      <div><p class="class-welcome p-text">FIRST TO 5 POINTS WINS!</p></div>
+    <div id="gameplay-screen">
+      <div><p class="msg-text p-text"></p></div>
       <section class="container-gameplay">
         <div class="container-style container-user">
-          <p class="para-score-style">User</p>
-          <p class="para-score-style" id="user-score">SCORE: 7</p>
+          <p class="para-score-style">USER</p>
+          <p class="para-score-style" id="user-score">Score: 0</p>
           <img src="" />
         </div>
 
         <div class="versus">VS</div>
         <div class="container-style container-computer">
           <p class="para-score-style">COMPUTER</p>
-          <p class="para-score-style" id="computer-score">SCORE: 7</p>
+          <p class="para-score-style" id="computer-score">Score: 0</p>
           <img style="transform: scaleX(-1)" src="" />
         </div>
       </section>
 
       <p class="p-text">SELECT YOUR MOVE</p>
       <section class="user-selection-images">
-        <button id="R" onclick="getPlayerChoice(this.id)">
+        <button id="R" onclick="playerSelection(this.id)">
           <img src="resources/rock1.png" alt="Rock" />
         </button>
-        <button id="P" onclick="getPlayerChoice(this.id)">
+        <button id="P" onclick="playerSelection(this.id)">
           <img src="resources/paper1.png" alt="Paper" />
         </button>
-        <button id="S" onclick="getPlayerChoice(this.id)">
+        <button id="S" onclick="playerSelection(this.id)">
           <img src="resources/scissors1.png" alt="Scissors" />
         </button>
       </section>
+    </div>
+    <section style="background-size: contain" class="winner">
+      <h1>Yay! You won!</h1>
+    </section>
+    <section class="loser">
+      <h1>Oh no you lost!</h1>
+    </section>
   </body>
 </html>

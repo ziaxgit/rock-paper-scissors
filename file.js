@@ -1,24 +1,41 @@
 function startGameFunc() {
+  let gameplayScreen = document.querySelector("#gameplay-screen");
+  console.log(gameplayScreen);
+  gameplayScreen.style.marginTop = "10vh";
+  gameplayScreen.style.visibility = "visible";
+
+  let topContainer = document.querySelector(".container-top");
+  topContainer.style.display = "none";
+
+  let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
   console.log(value);
   let userName = document.querySelector(
     ".container-gameplay .container-user p"
   );
-  userName.innerHTML = value;
-  let welcomeMsg = document.querySelector("p");
-  welcomeMsg.innerHTML = `Welcome ${value},  first to 5 points wins!`;
-  console.log(welcomeMsg);
+  if (value) {
+    welcomeMsg.innerHTML = `Welcome ${value},  first to 5 points wins!`;
+    userName.innerHTML = value;
+  } else {
+    welcomeMsg.innerHTML = `Welcome Stranger,  first to 5 points wins!`;
+    userName.innerHTML = "STRANGER";
+  }
+  return;
 }
-function getPlayerChoice(idOfMove) {
-  // whichever image player clicks, store it in a variable
+let userScore = 0;
+let compScore = 0;
+function playerSelection(playerSelection) {
+  let welcomeMsg = document.querySelector("p");
+  let value = document.querySelector("input").value.toUpperCase();
+
   let userImgTag = document.querySelector(
     ".container-style.container-user img"
   );
-  if (idOfMove === "R") {
+  if (playerSelection === "R") {
     userImgTag.src = "resources/rock1.png";
-  } else if (idOfMove === "P") {
+  } else if (playerSelection === "P") {
     userImgTag.src = "resources/paper1.png";
-  } else if (idOfMove === "S") {
+  } else if (playerSelection === "S") {
     userImgTag.src = "resources/scissors1.png";
   }
 
@@ -35,10 +52,49 @@ function getPlayerChoice(idOfMove) {
   } else if (compChoice === "S") {
     compImgTag.src = "resources/scissors1.png";
   }
+  let userScoreTag = document.querySelector(
+    ".container-style.container-user #user-score"
+  );
+  if (playerSelection === compChoice) {
+    welcomeMsg.innerHTML = "It's a tie!";
+  } else if (compChoice === "S" && playerSelection === "R") {
+    welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
+    userScore += 1;
+  } else if (compChoice === "R" && playerSelection === "P") {
+    welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
+    userScore += 1;
+  } else if (compChoice === "P" && playerSelection === "S") {
+    welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
+    userScore += 1;
+  } else {
+    welcomeMsg.innerHTML = `Point goes to computer!`;
+    compScore += 1;
+  }
 
+  userScoreTag.innerHTML = "Score: " + userScore;
+  console.log(userScoreTag);
+  let compScoreTag = document.querySelector(
+    ".container-style.container-computer #computer-score"
+  );
+  compScoreTag.innerHTML = "Score: " + compScore;
+
+  let gameplayScreen = document.querySelector("#gameplay-screen");
+
+  if (userScore === 5) {
+    let winnerScreen = document.querySelector(".winner");
+    gameplayScreen.style.display = "none";
+    winnerScreen.style.visibility = "visible";
+  }
+
+  var isTouch =
+    !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
+  if (!isTouch) {
+    
+  }
   return playerSelection;
 }
-function playOnClick() {
+/* function playOnClick() {
   let obj = {
     R: "Rock",
     P: "Paper",
@@ -51,17 +107,7 @@ function playOnClick() {
   }
 
   function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-      return "tie";
-    } else if (computerSelection === "S" && playerSelection === "R") {
-      return "player";
-    } else if (computerSelection === "R" && playerSelection === "P") {
-      return "player";
-    } else if (computerSelection === "P" && playerSelection === "S") {
-      return "player";
-    } else {
-      return "computer";
-    }
+   
   }
 
   function game(numOfRounds) {
@@ -147,3 +193,4 @@ function playOnClick() {
 
   alert(game(gamesToPlay));
 }
+ */
