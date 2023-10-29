@@ -57,6 +57,21 @@ function tieAnimation() {
   }, 700);
 }
 
+function winSound() {
+  let audio = new Audio("resources/sounds_won-round.wav");
+  audio.play();
+}
+
+function loseSound() {
+  let audio = new Audio("resources/sounds_lost-round.wav");
+  audio.play();
+}
+
+function tieSound() {
+  let audio = new Audio("resources/sounds_tie-round.wav");
+  audio.play();
+}
+
 function playerSelection(playerSelection) {
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
@@ -93,22 +108,27 @@ function playerSelection(playerSelection) {
   if (playerSelection === compChoice) {
     welcomeMsg.innerHTML = "It's a tie!";
     tieAnimation();
+    tieSound();
   } else if (compChoice === "S" && playerSelection === "R") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
+    winSound();
   } else if (compChoice === "R" && playerSelection === "P") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
+    winSound();
   } else if (compChoice === "P" && playerSelection === "S") {
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
+    winSound();
   } else {
     welcomeMsg.innerHTML = `Point goes to computer!`;
     compScore += 1;
     loseAnimation();
+    loseSound();
   }
 
   userScoreTag.innerHTML = "Score: " + userScore;
@@ -126,7 +146,7 @@ function playerSelection(playerSelection) {
     document.querySelector(".footer").style.display = "block";
   }
 
-  if (compScore === 5) {
+  if (compScore === 10) {
     let winnerScreen = document.querySelector(".loser");
     gameplayScreen.style.display = "none";
     winnerScreen.style.display = "block";
