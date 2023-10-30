@@ -61,6 +61,14 @@ function tieAnimation() {
 }
 
 function playerSelection(playerSelection) {
+  let imgButton = document.getElementById(playerSelection);
+  imgButton.disabled = true;
+
+  // Set a timeout to re-enable the button after 1.5 seconds (1500 milliseconds)
+  setTimeout(function () {
+    imgButton.disabled = false;
+  }, 1500);
+
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
 
