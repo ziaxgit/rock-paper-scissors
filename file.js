@@ -1,3 +1,7 @@
+function validate() {
+  let input = document.querySelector("input");
+  input.value = input.value.replace(/[^a-zA-Z]+/, "");
+}
 function startGameFunc() {
   let gameplayScreen = document.querySelector("#gameplay-screen");
   gameplayScreen.style.marginTop = "10vh";
