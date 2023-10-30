@@ -2,6 +2,7 @@ function validate() {
   let input = document.querySelector("input");
   input.value = input.value.replace(/[^a-zA-Z]+/, "");
 }
+
 function startGameFunc() {
   let gameplayScreen = document.querySelector("#gameplay-screen");
   gameplayScreen.style.marginTop = "10vh";
@@ -25,6 +26,7 @@ function startGameFunc() {
   document.querySelector(".footer").style.visibility = "hidden";
   return;
 }
+
 let userScore = 0;
 let compScore = 0;
 
@@ -78,12 +80,12 @@ function tieSound() {
 function playerSelection(playerSelection) {
   const imgButtons = document.querySelectorAll(".user-selection-images button");
 
-  // Disable all buttons
+  // Disable all buttons temporarily
   imgButtons.forEach(function (button) {
     button.disabled = true;
   });
 
-  // Set a timeout to re-enable all buttons after 2 seconds (2000 milliseconds)
+  // Set a timeout to re-enable all buttons after 1 second (1000 milliseconds)
   setTimeout(function () {
     imgButtons.forEach(function (button) {
       button.disabled = false;
@@ -121,7 +123,7 @@ function playerSelection(playerSelection) {
     ".container-style.container-user #user-score"
   );
 
-  // this block is for messages of who won the round
+  // this block is for messages to display of player who won the round
   if (playerSelection === compChoice) {
     tieSound();
     welcomeMsg.innerHTML = "It's a tie!";
@@ -148,6 +150,7 @@ function playerSelection(playerSelection) {
     loseAnimation();
   }
 
+  // adjust the html score text accordingly
   userScoreTag.innerHTML = "Score: " + userScore;
   let compScoreTag = document.querySelector(
     ".container-style.container-computer #computer-score"
@@ -155,23 +158,16 @@ function playerSelection(playerSelection) {
   compScoreTag.innerHTML = "Score: " + compScore;
 
   if (userScore === 5) {
-    setTimeout(winnerScreen, 1000);
-
-    /*     // Set a timeout to load the next screen
-    setTimeout(function () {
-    }, 1000); */
+    setTimeout(winnerScreen, 1000); //wait 1 sec then load the next screen
   }
 
   if (compScore === 5) {
-    setTimeout(loserScreen, 1000);
-
-    /*     // Set a timeout to load the next screen
-    setTimeout(function () {
-    }, 1000); */
+    setTimeout(loserScreen, 1000); //wait 1 sec then load the next screen
   }
   return playerSelection;
 }
 
+// Array of winning messages for Rock, Paper, Scissors
 const winningMessages = [
   "Rock and roll, you've crushed it!",
   "Paper covers rock, but you've covered them all!",
@@ -202,11 +198,9 @@ function winnerScreen() {
   let winnerScreen = document.querySelector(".winner");
   winnerScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
-
-  document.getElementById("happy-audio").play();
-  /*   let audio = new Audio();
+  let audio = new Audio();
   audio.src = "resources/happy-happy-cat.mp3";
-  audio.play(); */
+  audio.play();
 }
 
 function loserScreen() {
@@ -217,11 +211,9 @@ function loserScreen() {
   let loserScreen = document.querySelector(".loser");
   loserScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
-  document.getElementById("sad-audio").play();
-
-  /*   let audio = new Audio();
+  let audio = new Audio();
   audio.src = "resources/banana-cat-crying.mp3";
-  audio.play(); */
+  audio.play();
 }
 
 function reloadFunc() {
