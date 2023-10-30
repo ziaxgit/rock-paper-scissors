@@ -154,14 +154,14 @@ function playerSelection(playerSelection) {
   );
   compScoreTag.innerHTML = "Score: " + compScore;
 
-  if (userScore === 1) {
+  if (userScore === 5) {
     winnerScreen();
     /*     // Set a timeout to load the next screen
     setTimeout(function () {
     }, 1000); */
   }
 
-  if (compScore === 1) {
+  if (compScore === 5) {
     loserScreen();
     /*     // Set a timeout to load the next screen
     setTimeout(function () {
