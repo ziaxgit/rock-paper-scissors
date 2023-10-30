@@ -158,14 +158,14 @@ function playerSelection(playerSelection) {
     // Set a timeout to load the next screen
     setTimeout(function () {
       winnerScreen();
-    }, 1200);
+    }, 1000);
   }
 
   if (compScore === 5) {
     // Set a timeout to load the next screen
     setTimeout(function () {
       loserScreen();
-    }, 1200);
+    }, 1000);
   }
   return playerSelection;
 }
