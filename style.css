@@ -215,6 +215,7 @@ button:hover {
   cursor: pointer;
   border-radius: 5px;
   width: 8em;
+  animation: pulse 1s infinite;
 }
 
 .play-again p {
