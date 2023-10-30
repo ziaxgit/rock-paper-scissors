@@ -60,21 +60,6 @@ function tieAnimation() {
   }, 700);
 }
 
-function winSound() {
-  let audio = new Audio("resources/sounds_won-round.wav");
-  audio.play();
-}
-
-function loseSound() {
-  let audio = new Audio("resources/sounds_lost-round.wav");
-  audio.play();
-}
-
-function tieSound() {
-  let audio = new Audio("resources/sounds_tie-round.wav");
-  audio.play();
-}
-
 function playerSelection(playerSelection) {
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
@@ -118,12 +103,12 @@ function playerSelection(playerSelection) {
     userScore += 1;
     winAnimation();
   } else if (compChoice === "R" && playerSelection === "P") {
-    winSound(); 
+    winSound();
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
   } else if (compChoice === "P" && playerSelection === "S") {
-    winSound(); 
+    winSound();
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
@@ -148,6 +133,21 @@ function playerSelection(playerSelection) {
     loserScreen();
   }
   return playerSelection;
+}
+
+function winSound() {
+  let audio = new Audio("resources/sounds_won-round.wav");
+  audio.play();
+}
+
+function loseSound() {
+  let audio = new Audio("resources/sounds_lost-round.wav");
+  audio.play();
+}
+
+function tieSound() {
+  let audio = new Audio("resources/sounds_tie-round.wav");
+  audio.play();
 }
 
 const winningMessages = [
