@@ -19,6 +19,7 @@ function startGameFunc() {
     userName.innerHTML = "STRANGER";
   }
   document.querySelector(".footer").style.visibility = "hidden";
+  loserScreen();
   return;
 }
 let userScore = 0;
