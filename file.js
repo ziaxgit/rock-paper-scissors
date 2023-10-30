@@ -109,29 +109,29 @@ function playerSelection(playerSelection) {
 
   // this block is for messages of who won the round
   if (playerSelection === compChoice) {
+    tieSound();
     welcomeMsg.innerHTML = "It's a tie!";
     tieAnimation();
-    tieSound();
   } else if (compChoice === "S" && playerSelection === "R") {
+    winSound();
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
-    winSound();
   } else if (compChoice === "R" && playerSelection === "P") {
+    winSound(); 
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
-    winSound();
   } else if (compChoice === "P" && playerSelection === "S") {
+    winSound(); 
     welcomeMsg.innerHTML = `Point goes to ${value ? value : "Stranger"}!`;
     userScore += 1;
     winAnimation();
-    winSound();
   } else {
     welcomeMsg.innerHTML = `Point goes to computer!`;
+    loseSound();
     compScore += 1;
     loseAnimation();
-    loseSound();
   }
 
   userScoreTag.innerHTML = "Score: " + userScore;
