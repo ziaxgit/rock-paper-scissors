@@ -155,23 +155,17 @@ function playerSelection(playerSelection) {
   compScoreTag.innerHTML = "Score: " + compScore;
 
   if (userScore === 1) {
-    // Set a timeout to load the next screen
+    winnerScreen();
+    /*     // Set a timeout to load the next screen
     setTimeout(function () {
-      let audio = new Audio();
-      audio.src = "resources/happy-happy-cat.mp3";
-      audio.play();
-      winnerScreen();
-    }, 1000);
+    }, 1000); */
   }
 
   if (compScore === 1) {
-    // Set a timeout to load the next screen
+    loserScreen();
+    /*     // Set a timeout to load the next screen
     setTimeout(function () {
-      let audio = new Audio();
-      audio.src = "resources/banana-cat-crying.mp3";
-      audio.play();
-      loserScreen();
-    }, 1000);
+    }, 1000); */
   }
   return playerSelection;
 }
@@ -207,8 +201,10 @@ function winnerScreen() {
   winnerScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
 
-  /*   document.getElementById("happy-audio").play();
-   */
+  document.getElementById("happy-audio").play();
+  /*   let audio = new Audio();
+  audio.src = "resources/happy-happy-cat.mp3";
+  audio.play(); */
 }
 
 function loserScreen() {
@@ -219,8 +215,11 @@ function loserScreen() {
   let loserScreen = document.querySelector(".loser");
   loserScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
-  /*   document.getElementById("sad-audio").play();
-   */
+  document.getElementById("sad-audio").play();
+
+  /*   let audio = new Audio();
+  audio.src = "resources/banana-cat-crying.mp3";
+  audio.play(); */
 }
 
 function reloadFunc() {
