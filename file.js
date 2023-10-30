@@ -76,13 +76,19 @@ function tieSound() {
 }
 
 function playerSelection(playerSelection) {
-  let imgButton = document.getElementById(playerSelection);
-  imgButton.disabled = true;
+  const imgButtons = document.querySelectorAll(".user-selection-images button");
 
-  // Set a timeout to re-enable the button after 1.5 seconds (1500 milliseconds)
+  // Disable all buttons
+  imgButtons.forEach(function (button) {
+    button.disabled = true;
+  });
+
+  // Set a timeout to re-enable all buttons after 2 seconds (2000 milliseconds)
   setTimeout(function () {
-    imgButton.disabled = false;
-  }, 1500);
+    imgButtons.forEach(function (button) {
+      button.disabled = false;
+    });
+  }, 1000);
 
   let welcomeMsg = document.querySelector("p");
   let value = document.querySelector("input").value.toUpperCase();
