@@ -60,6 +60,21 @@ function tieAnimation() {
   }, 700);
 }
 
+function winSound() {
+  let audio = new Audio("resources/sounds_won-round.wav");
+  audio.play();
+}
+
+function loseSound() {
+  let audio = new Audio("resources/sounds_lost-round.wav");
+  audio.play();
+}
+
+function tieSound() {
+  let audio = new Audio("resources/sounds_tie-round.wav");
+  audio.play();
+}
+
 function playerSelection(playerSelection) {
   let imgButton = document.getElementById(playerSelection);
   imgButton.disabled = true;
@@ -134,28 +149,19 @@ function playerSelection(playerSelection) {
   compScoreTag.innerHTML = "Score: " + compScore;
 
   if (userScore === 5) {
-    winnerScreen();
+    // Set a timeout to load the next screen
+    setTimeout(function () {
+      winnerScreen();
+    }, 1200);
   }
 
   if (compScore === 5) {
-    loserScreen();
+    // Set a timeout to load the next screen
+    setTimeout(function () {
+      loserScreen();
+    }, 1200);
   }
   return playerSelection;
-}
-
-function winSound() {
-  let audio = new Audio("resources/sounds_won-round.wav");
-  audio.play();
-}
-
-function loseSound() {
-  let audio = new Audio("resources/sounds_lost-round.wav");
-  audio.play();
-}
-
-function tieSound() {
-  let audio = new Audio("resources/sounds_tie-round.wav");
-  audio.play();
 }
 
 const winningMessages = [
