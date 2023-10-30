@@ -157,8 +157,8 @@ function playerSelection(playerSelection) {
   if (userScore === 1) {
     // Set a timeout to load the next screen
     setTimeout(function () {
-      let audio = new Audio("resources/happy-happy-cat.mp3");
-      audio.play();
+/*       let audio = new Audio("resources/happy-happy-cat.mp3");
+      audio.play(); */
       winnerScreen();
     }, 1000);
   }
@@ -166,8 +166,8 @@ function playerSelection(playerSelection) {
   if (compScore === 1) {
     // Set a timeout to load the next screen
     setTimeout(function () {
-      let audio = new Audio("resources/banana-cat-crying.mp3");
-      audio.play();
+/*       let audio = new Audio("resources/banana-cat-crying.mp3");
+      audio.play(); */
       loserScreen();
     }, 1000);
   }
@@ -204,8 +204,8 @@ function winnerScreen() {
   let winnerScreen = document.querySelector(".winner");
   winnerScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
-  /*   
-  document.getElementById("happy-audio").play(); */
+  
+  document.getElementById("happy-audio").play();
 }
 
 function loserScreen() {
@@ -216,6 +216,8 @@ function loserScreen() {
   let loserScreen = document.querySelector(".loser");
   loserScreen.style.display = "flex";
   document.querySelector(".footer").style.visibility = "visible";
+  document.getElementById("sad-audio").play();
+
 }
 
 function reloadFunc() {
