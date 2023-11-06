@@ -12,7 +12,7 @@
 - To enable a mouse click function by pressing the Enter key you can use `
 <input onkeydown = "if (event.keyCode == 13) document.getElementById('myBtn').click()"/>`
 - You can use ternary statements inside a template literal. E.g. ``Point goes to ${value ? value : "Stranger"}!``
-- Using style `display: none;` will make a div invisible while affecting all other CSS styles. To set it visibile use `display: block`
+- Using style `display: none;` will make a div invisible while affecting the margin/padding of other elements. To set it visibile use `display: block/flex`. Using `visibility: hidden` however, only makes the div invisible and keeps other elements margin intact.  
 - Use `setTimeout` to disable a button till it can be clicked again. This is useful if you don't want users to spam clicking a button.
 
 At first, I had difficulty understanding the Document Object Model (DOM). However, doing this project made it easy to grasp the concepts. 
